@@ -1,4 +1,5 @@
 const path = require("path");
+require("dotenv").config();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,6 +9,9 @@ const nextConfig = {
     config.resolve.alias["public"] = path.join(__dirname, "public");
 
     return config;
+  },
+  env: {
+    API_URL: process.env.API_URL,
   },
 };
 
