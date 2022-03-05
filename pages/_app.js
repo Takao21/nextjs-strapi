@@ -1,11 +1,17 @@
 import Header from "components/Header";
 import "../styles/globals.css";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
+
+const theme = {
+  colors: {
+    primary: "#f10000",
+  },
+};
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Header />
         <Component {...pageProps} />
       </ThemeProvider>
