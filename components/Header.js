@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { rem } from "polished";
+import { theme } from "../theme/theme";
 
 const Header = () => {
   return (
@@ -16,7 +17,8 @@ const Header = () => {
 };
 
 const HeaderStyled = styled.header`
-  background: #efefef;
+  /* background: #efefef; */
+  background: ${({ theme }) => theme.colors.primary};
   padding: 20px;
   .logo {
     display: flex;
