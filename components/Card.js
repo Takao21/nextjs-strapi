@@ -6,19 +6,25 @@ const Card = ({ movie }) => {
   const { API_URL } = process.env;
   return (
     <CardStyled>
-      <div className="poster">
-        <img
-          src={API_URL + movie.attributes.poster.data.attributes.url}
-          alt="movie poster"
-          layout="fill"
-        />
-      </div>
+      {movie.attributes.poster.data && (
+        <div className="poster">
+          <img
+            src={API_URL + movie.attributes.poster.data.attributes.url}
+            alt="movie poster"
+            layout="fill"
+          />
+        </div>
+      )}
       <div className="body">
         <h3>{movie.attributes.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: movie.attributes.description }} />
         <Link
           href="/movies/[genre]/[slug]"
-          as={`/movies/${movie.attributes.genre.data.attributes.slug}/${movie.attributes.slug}`}
+          as={`/movies/${
+            movie.attributes.genre.data
+              ? movie.attributes.genre.data.attributes.slug
+              : "uncategorized"
+          }/${movie.attributes.slug}`}
         >
           <a>See More Info</a>
         </Link>
