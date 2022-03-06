@@ -1,4 +1,4 @@
-export default SEO = {
+const SEO = {
   title: "Next Movies",
   description: "Database of movies created with Next.js and Strapi",
   openGraph: {
@@ -13,3 +13,5 @@ export default SEO = {
     cardType: "summary_large_image",
   },
 };
+
+export default SEO;

@@ -1,10 +1,20 @@
 import React from "react";
 // import getConfig from "next/config";
+import { NextSeo } from "next-seo";
 
 const Movie = ({ movie }) => {
-  console.log("movie ", movie);
+  const SEO = {
+    title: `Next Movies | ${movie.attributes.title}`,
+    description: movie.attributes.description,
+
+    openGraph: {
+      title: `Next Movies | ${movie.attributes.title}`,
+      description: movie.attributes.description,
+    },
+  };
   return (
     <div>
+      <NextSeo {...SEO} />
       <h1>{movie.attributes.title}</h1>
       <p dangerouslySetInnerHTML={{ __html: movie.attributes.description }}></p>
     </div>
