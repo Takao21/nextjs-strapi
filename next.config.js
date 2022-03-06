@@ -12,12 +12,14 @@ const nextConfig = {
   },
   env: {
     API_URL: process.env.API_URL,
+    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
   },
-  // publicRuntimeConfig: {
-  //   API_URL: process.env.API_URL,
-  // },
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+    IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
+  },
   images: {
-    domains: ["localhost"],
+    domains: [process.env.IMAGES_DOMAIN],
   },
 };
 
