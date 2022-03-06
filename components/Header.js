@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { rem } from "polished";
-import { theme } from "../theme/theme";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <HeaderStyled>
       <div className="container">
         <div className="logo">
-          <img src="/images/logo.svg" alt="Sites logo" />
-          <span className="logo-text">Next Movies</span>
+          <Link href="/">
+            <a>
+              <img src="/images/logo.svg" alt="Sites logo" />
+              <span className="logo-text">Next Movies</span>
+            </a>
+          </Link>
         </div>
       </div>
     </HeaderStyled>
