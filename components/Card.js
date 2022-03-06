@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Card = ({ movie }) => {
   const { API_URL } = process.env;
@@ -8,10 +8,13 @@ const Card = ({ movie }) => {
     <CardStyled>
       {movie.attributes.poster.data && (
         <div className="poster">
-          <img
+          <Image
             src={API_URL + movie.attributes.poster.data.attributes.url}
+            placeholder="blur"
+            blurDataURL={API_URL + movie.attributes.poster.data.attributes.url}
             alt="movie poster"
             layout="fill"
+            className="poster-img"
           />
         </div>
       )}
@@ -42,8 +45,15 @@ const CardStyled = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   .poster {
-    img {
+    max-width: 100%;
+    width: 960px;
+    height: 480px;
+    position: relative;
+    .poster-img {
       width: 100%;
+      height: auto;
+      object-fit: cover;
+      background-position: top center;
     }
   }
 

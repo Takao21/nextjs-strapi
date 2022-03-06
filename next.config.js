@@ -16,6 +16,9 @@ const nextConfig = {
   // publicRuntimeConfig: {
   //   API_URL: process.env.API_URL,
   // },
+  images: {
+    domains: ["localhost"],
+  },
 };
 
 module.exports = nextConfig;
