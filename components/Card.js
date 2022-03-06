@@ -45,13 +45,11 @@ const CardStyled = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   .poster {
-    max-width: 100%;
-    width: 960px;
     height: 480px;
     position: relative;
     .poster-img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       background-position: top center;
     }
