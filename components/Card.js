@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Link from "next/link";
 import React from "react";
 
 const Card = ({ movie }) => {
@@ -15,6 +16,12 @@ const Card = ({ movie }) => {
       <div className="body">
         <h3>{movie.attributes.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: movie.attributes.description }} />
+        <Link
+          href="/movies/[genre]/[slug]"
+          as={`/movies/${movie.attributes.genre.data.attributes.slug}/${movie.attributes.slug}`}
+        >
+          <a>See More Info</a>
+        </Link>
       </div>
     </CardStyled>
   );
@@ -36,6 +43,7 @@ const CardStyled = styled.div`
 
   .body {
     padding: 20px;
+    padding-bottom: 50px;
 
     h3 {
       margin-bottom: 20px;
