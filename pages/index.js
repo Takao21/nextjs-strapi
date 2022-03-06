@@ -14,7 +14,6 @@ const Home = ({ movies }) => {
 
 export const getServerSideProps = async () => {
   const { API_URL } = process.env;
-  console.log("api", API_URL);
   const res = await fetch(`${API_URL}/api/movies?populate=*`);
   const data = await res.json();
   return {
